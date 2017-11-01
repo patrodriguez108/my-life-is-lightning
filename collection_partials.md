@@ -2,6 +2,8 @@
 
 <p>Collection partials are a specific form of partial. They can render partials from within a views folder without needing to specify anything. IT'S RIDICULOUS.</p>
 
+<h3>Basics</h3>
+
 <p>So like let's say in my posts controller, and in my index method I have posts.all set to @posts and I have a partial called _post.html.erb, and it's nested in views/posts. If I wanted to render all of the posts, using the partial from my posts folder in views I can just say something like:</p>
 
 
@@ -22,18 +24,10 @@
 
 <p>And it will do the same damn thing. IT'S WILD YO.</p>
 
-<p>How this works is that when we call on the built in render method, behind the scenes we are calling on a method called "to_partial_path" on EACH of the objects within that collection. So when I say "render @posts", I am also saying:</p>
+<p>If the collection is empty, render will return nil. We have the option in this case to provide a default statement.</p>
 
-
+	<%= render(@posts) || "Ay there ain't nothin' in dis tho" %>
 	
- 	@posts.each do |post|
- 		post.to_partial_path
- 	end
-
- 	
-
-<p>The method "to_partial_path" finds the partial that matches the model name that defines the object. This works for all models that inherit from ActiveRecord::Base.</p>
-
 <p>This even works for collections that belong to specific objects. While we could iterate through a collection, like a specific post's comments, and render that partial, like:</p>
 
 
@@ -60,8 +54,20 @@
  	<%= render [post1, comment2, comment3, post3, comment5] %>
 
  	<%= render [@post1, @comment2, @comment3, @post3, @comment5] %>
+	
+<h3>Behind the Scenes</h3>
 
-  	
+<p>How this all works is that when we call on the built in render method, behind the scenes we are calling on a method called "to_partial_path" on EACH of the objects within that collection. So when I say "render @posts", I am also saying:</p>
+
+
+	
+ 	@posts.each do |post|
+ 	   post.to_partial_path
+ 	end
+
+ 	
+
+<p>The method "to_partial_path" finds the partial that matches the model name that defines the object. This works for all models that inherit from ActiveRecord::Base.</p>
 
 <p>Thank you for listening to me. But really it wasn't really hard to learn all this. It was just partial work.</p>
 
