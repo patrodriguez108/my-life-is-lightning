@@ -21,12 +21,12 @@
 
 <p>How this works is that when we call on the built in render method, behind the scenes we are calling on "to_partial_path." So when I say "render @users", I am also saying:</p>
 
-	```
+	
  	@users.each do |user|
  		user.to_partial_path
  	end
 
- 	```
+ 	
 <p>The method to_partial_path finds the partial that matches the model name that defines the object. This works for all models that inherit from ActiveRecord::Base.</p>
 
 <p>This even works for collections that belong to specific objects. While we could iterate through a collection, like a specific user's comments, and render that partial, like:</p>
