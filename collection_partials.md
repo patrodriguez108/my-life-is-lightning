@@ -4,7 +4,7 @@
 
 <h3>Basics</h3>
 
-<p>So like let's say in my posts controller, and in my index method I have posts.all set to @posts and I have a partial called _post.html.erb, and it's nested in views/posts. If I wanted to render all of the posts, using the partial from my posts folder in views I can just say something like:</p>
+<p>So like let's say in my posts controller, and in my index method I have Post.all set to @posts and I have a partial called _post.html.erb, and it's nested in views/posts. If I wanted to render all of the posts, using the partial from my posts folder in views I can just say something like:</p>
 
 
 	 
