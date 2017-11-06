@@ -22,8 +22,7 @@ Flower = (args) ->
 ===
 
 var Flower = function(args) {
-	return args = { name: this.name,
-									color: this.color }
+	return args = { name: this.name, color: this.color }
 }
 
 ```
