@@ -32,8 +32,8 @@ We no longer need to use triple equals ("===") when needing to return a boolean.
 ```
 
 (color) ->
-	garden.flowers.filter((flower) ->
-	 flower.color == color)
+  garden.flowers.filter((flower) ->
+    flower.color == color)
 
 ===
 
