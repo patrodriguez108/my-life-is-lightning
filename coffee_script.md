@@ -17,12 +17,12 @@ Essentially what CoffeeScript does is smooth out the Javascript logic. Gone are 
 ```
 
 Flower = (args) ->
-	{ @name, @color } = args
+   { @name, @color } = args
 
 ===
 
 var Flower = function(args) {
-	return args = { name: this.name, color: this.color }
+   return args = { name: this.name, color: this.color }
 }
 
 ```
