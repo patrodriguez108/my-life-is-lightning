@@ -49,22 +49,6 @@ For loops are also broken down into a simpler syntax.
 
 ```
 
-eat food for food in ['toast', 'cheese', 'wine']
-
-===
-
-var eat = function(food) {
-  return `${food} eaten.`;
-};
-
-var ref = ['toast', 'cheese', 'wine'];
-for (j = 0, len = ref.length; j < len; j++) {
-  food = ref[j];
-  eat(food);
-}
-
-_________________________
-
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
